@@ -4,7 +4,6 @@ import { useState } from "react";
 export default function Home() {
   const [experience, setExperience] = useState("");
   const [recommendation, setRecommendation] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const recommendJob = async () => {
     if (!experience) {
@@ -12,14 +11,11 @@ export default function Home() {
       return;
     }
 
-    setLoading(true);
     try {
       setRecommendation(recommendation || "No recommendation available");
     } catch (error) {
       console.error("Error fetching recommendation:", error);
       setRecommendation("Error fetching recommendation");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -40,9 +36,8 @@ export default function Home() {
       <button
         onClick={recommendJob}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        disabled={loading}
       >
-        {loading ? "Loading..." : "Recommend Job"}
+        Recommend Job
       </button>
       {recommendation && (
         <div className="mt-5 text-lg text-gray-800">
