@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
 
+/**
+ * Renders the Job Recommendation UI that collects a user's experience level and displays a recommended job.
+ *
+ * The component validates that an experience value is provided (shows an alert if not), updates internal recommendation state when the action is triggered, and displays the recommendation or an error message.
+ *
+ * @returns The React element for the job recommendation interface.
+ */
 export default function Home() {
   const [experience, setExperience] = useState("");
   const [recommendation, setRecommendation] = useState("");
