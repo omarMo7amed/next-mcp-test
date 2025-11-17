@@ -32,7 +32,7 @@ export default function Home() {
         placeholder="Your experience level"
         className="p-2 w-72 mb-4 border border-gray-300 rounded"
       />
-      <br />
+      <br />s
       <button
         onClick={recommendJob}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
